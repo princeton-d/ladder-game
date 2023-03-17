@@ -10,11 +10,10 @@ public class Game {
   private OutputView outputView = new OutputView();
 
   public void startGame() {
-    String[] playerNames = inputView.enterPlayerName();
-    String[] rewards = inputView.enterReward();
-    int heightOfLadder = inputView.enterLadderHeight();
+    String[] playerNames = inputView.enterPlayerName(outputView);
+    String[] rewards = inputView.enterReward(outputView);
+    int heightOfLadder = inputView.enterLadderHeight(outputView);
 
     Players players = Players.create(playerNames);
-
   }
 }
