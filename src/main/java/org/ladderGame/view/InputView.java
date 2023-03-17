@@ -3,22 +3,22 @@ package org.ladderGame.view;
 import java.util.Scanner;
 
 public class InputView {
-
+    
     private static final String DELIMITER = ",";
     private Scanner scanner = new Scanner(System.in);
-
+    
     public String[] enterPlayerName(OutputView outputView) {
         outputView.printPlayerNameGuide();
         String line = scanner.nextLine();
         return line.split(DELIMITER);
     }
-
+    
     public String[] enterReward(OutputView outputView) {
         outputView.printRewardGuide();
         String line = scanner.nextLine();
         return line.split(DELIMITER);
     }
-
+    
     public int enterLadderHeight(OutputView outputView) {
         outputView.printLadderHeightGuide();
         String input = null;
