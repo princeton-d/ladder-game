@@ -1,6 +1,8 @@
 package org.ladderGame;
 
 import org.ladderGame.domain.ladder.Ladder;
+import org.ladderGame.domain.ladder.LadderBuilder;
+import org.ladderGame.domain.ladder.LadderInfo;
 import org.ladderGame.domain.player.Players;
 import org.ladderGame.domain.reward.Rewards;
 import org.ladderGame.view.InputView;
@@ -18,6 +20,9 @@ public class Game {
         
         Players players = Players.create(playerNames);
         Rewards rewards = Rewards.createRewardList(rewardsNames);
-        Ladder ladder = new Ladder(); // 수정필요
+    
+        LadderInfo ladderInfo = new LadderInfo(heightOfLadder, players.getPlayersdList(), rewards.getRewards());
+        
+        LadderBuilder.makeLadder(ladderInfo, outputView);
     }
 }

@@ -17,4 +17,20 @@ public class LadderInfo {
         this.rewards = rewards;
         this.NUMBER_OF_PLAYER = players.size();
     }
+    
+    public int getHeightOfLadder() {
+        return HEIGHT_OF_LADDER;
+    }
+    
+    public List<Player> getPlayersList() {
+        return players;
+    }
+    
+    public List<Reward> getRewardsList() {
+        return rewards;
+    }
+    
+    public int getNumberOfPlayer() {
+        return NUMBER_OF_PLAYER;
+    }
 }

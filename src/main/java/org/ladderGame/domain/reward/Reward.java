@@ -7,4 +7,8 @@ public class Reward {
     public Reward(String reward) {
         this.reward = reward;
     }
+    
+    public String getReward() {
+        return reward;
+    }
 }

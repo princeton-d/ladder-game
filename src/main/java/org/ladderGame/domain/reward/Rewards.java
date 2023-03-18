@@ -18,4 +18,8 @@ public class Rewards {
             .collect(Collectors.toUnmodifiableList());
         return new Rewards(rewards);
     }
+    
+    public List<Reward> getRewards() {
+        return rewards;
+    }
 }
