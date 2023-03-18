@@ -23,6 +23,6 @@ public class Game {
     
         LadderInfo ladderInfo = new LadderInfo(heightOfLadder, players, rewards);
         
-        LadderBuilder.makeLadder(ladderInfo, outputView);
+        Ladder ladder = LadderBuilder.makeLadder(ladderInfo);
     }
 }
