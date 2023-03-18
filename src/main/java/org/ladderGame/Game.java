@@ -21,7 +21,7 @@ public class Game {
         Players players = Players.create(playerNames);
         Rewards rewards = Rewards.createRewardList(rewardsNames);
     
-        LadderInfo ladderInfo = new LadderInfo(heightOfLadder, players.getPlayersdList(), rewards.getRewards());
+        LadderInfo ladderInfo = new LadderInfo(heightOfLadder, players, rewards);
         
         LadderBuilder.makeLadder(ladderInfo, outputView);
     }
