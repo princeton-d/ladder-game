@@ -12,8 +12,7 @@ public class LadderBuilder {
     
     public static void makeLadder(LadderInfo ladderInfo, OutputView outputView) {
         String listedPlayerNames = LadderBuilder.createListedPlayerNames(ladderInfo);
-        outputView.printPlayerNamesList(listedPlayerNames);
-        
+        String listedRewardNames = LadderBuilder.createListedRewardNames(ladderInfo);
         
     }
     
@@ -28,5 +27,10 @@ public class LadderBuilder {
         }
     
         return listedPlayerNames;
+    }
+    
+    public static String createListedRewardNames(LadderInfo ladderInfo) {
+        String listedRewardNames = "";
+        int numberOfReward = ladderInfo.getNumberOfReward();
     }
 }

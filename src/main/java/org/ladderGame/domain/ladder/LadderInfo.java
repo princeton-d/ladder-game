@@ -12,12 +12,14 @@ public class LadderInfo {
     private final List<Player> players;
     private final List<Reward> rewards;
     private final int NUMBER_OF_PLAYER;
+    private final int NUMBER_OF_REWARD;
     
     public LadderInfo(int heightOfLadder, Players players, Rewards rewards) {
         this.HEIGHT_OF_LADDER = heightOfLadder;
         this.players = players.getPlayersdList();
         this.rewards = rewards.getRewards();
         this.NUMBER_OF_PLAYER = players.getPlayersdList().size();
+        this.NUMBER_OF_REWARD = rewards.getRewards().size();
     }
     
     public int getHeightOfLadder() {
@@ -34,5 +36,9 @@ public class LadderInfo {
     
     public int getNumberOfPlayer() {
         return NUMBER_OF_PLAYER;
+    }
+    
+    public int getNumberOfReward() {
+        return NUMBER_OF_REWARD;
     }
 }
