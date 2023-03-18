@@ -24,5 +24,7 @@ public class Game {
         LadderInfo ladderInfo = new LadderInfo(heightOfLadder, players, rewards);
         
         Ladder ladder = LadderBuilder.makeLadder(ladderInfo);
+        
+        outputView.printLadder(ladder);
     }
 }

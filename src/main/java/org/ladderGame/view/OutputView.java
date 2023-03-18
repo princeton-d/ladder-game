@@ -1,5 +1,7 @@
 package org.ladderGame.view;
 
+import org.ladderGame.domain.ladder.Ladder;
+
 public class OutputView {
     
     public void printPlayerNameGuide() {
@@ -14,8 +16,18 @@ public class OutputView {
         System.out.println("\n최대 사다리 높이는 몇 개인가요?");
     }
     
-    public void printLadder() {
+    public void printLadder(Ladder ladder) {
+        String[][] ladderBodyArray = ladder.getLadderBody();
+        
         System.out.println("\n사다리 결과\n");
+        System.out.println(ladder.getPlayerList());
+        this.printLadderBody(ladderBodyArray);
+        System.out.println(ladder.getRewardList());
     }
     
+    private void printLadderBody(String[][] ladderBodyArray) {
+        for (String[] row : ladderBodyArray) {
+            System.out.println(String.join("", row));
+        }
+    }
 }

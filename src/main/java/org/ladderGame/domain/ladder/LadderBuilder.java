@@ -2,7 +2,6 @@ package org.ladderGame.domain.ladder;
 
 import org.ladderGame.domain.player.Player;
 import org.ladderGame.domain.reward.Reward;
-import org.ladderGame.view.OutputView;
 
 import java.util.List;
 import java.util.Random;
@@ -12,7 +11,7 @@ public class LadderBuilder {
         String listedPlayerNames = LadderBuilder.createListedPlayerNames(ladderInfo);
         String listedRewardNames = LadderBuilder.createListedRewardNames(ladderInfo);
         String[][] LadderBody = LadderBuilder.createLadderBody(ladderInfo);
-    
+        
         return new Ladder(listedPlayerNames, listedRewardNames, LadderBody);
     }
     
@@ -53,6 +52,7 @@ public class LadderBuilder {
                     continue;
                 }
                 ladderBody[i][j] = LADDER_COLUMN_SHAPE + EMPTY_LADDER_ROW;
+                prevRowPrint = false;
             }
             prevRowPrint = false;
         }

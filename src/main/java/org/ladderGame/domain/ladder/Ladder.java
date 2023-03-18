@@ -10,4 +10,16 @@ public class Ladder {
         this.ladderBody = ladderBody;
         this.rewardList = rewardList;
     }
+    
+    public String getPlayerList() {
+        return playerList;
+    }
+    
+    public String getRewardList() {
+        return rewardList;
+    }
+    
+    public String[][] getLadderBody() {
+        return ladderBody;
+    }
 }
