@@ -19,4 +19,8 @@ public class Players {
         
         return new Players(players);
     }
+    
+    public List<Player> getPlayersdList() {
+        return this.players;
+    }
 }
