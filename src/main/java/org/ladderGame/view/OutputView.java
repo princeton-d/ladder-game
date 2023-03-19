@@ -1,8 +1,10 @@
 package org.ladderGame.view;
 
 import org.ladderGame.domain.ladder.Ladder;
+import org.ladderGame.domain.player.Player;
 import org.ladderGame.domain.player.Players;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 public class OutputView {
@@ -48,6 +50,9 @@ public class OutputView {
         
         if (player.equals("all")) {
             System.out.println("\n실행 결과");
+            for (Player name : players.getPlayersList()) {
+                System.out.println(name.getPlayerName() + ": " + name.getReward());
+            }
             return !reenterPlayerName;
         }
     

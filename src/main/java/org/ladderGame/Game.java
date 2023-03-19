@@ -27,29 +27,28 @@ public class Game {
         
         outputView.printLadder(ladder);
         
-        int token;
+        int location;
         
         for (int i = 0; i < playerNames.length; i++) {
-            token = i;
-            int result = findResult(heightOfLadder, ladder, token);
+            location = i;
+            int result = findResult(heightOfLadder, ladder, location);
             players.getPlayersList().get(i).enterResult(rewards.getRewards().get(result));
-//            System.out.println(players.getPlayersList().get(i).getPlayerName() + " = " + rewards.getRewards().get(result).getReward());
         }
 
         inputView.enterPlayerNameForResult(outputView, players);
     }
     
-    private static int findResult(int heightOfLadder, Ladder ladder, int token) {
+    private static int findResult(int heightOfLadder, Ladder ladder, int location) {
         for (int i = 0; i < heightOfLadder; i++) {
-            if (ladder.getLadderBody()[i][token].equals("|-----")) {
-                ++token;
+            if (ladder.getLadderBody()[i][location].equals("|-----")) {
+                ++location;
                 continue;
             }
             
-            if (token != 0 && ladder.getLadderBody()[i][token - 1].equals("|-----")) {
-                --token;
+            if (location != 0 && ladder.getLadderBody()[i][location - 1].equals("|-----")) {
+                --location;
             }
         }
-        return token;
+        return location;
     }
 }
