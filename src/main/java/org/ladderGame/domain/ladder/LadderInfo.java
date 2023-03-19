@@ -16,9 +16,9 @@ public class LadderInfo {
     
     public LadderInfo(int heightOfLadder, Players players, Rewards rewards) {
         this.HEIGHT_OF_LADDER = heightOfLadder;
-        this.players = players.getPlayersdList();
+        this.players = players.getPlayersList();
         this.rewards = rewards.getRewards();
-        this.NUMBER_OF_PLAYER = players.getPlayersdList().size();
+        this.NUMBER_OF_PLAYER = players.getPlayersList().size();
         this.NUMBER_OF_REWARD = rewards.getRewards().size();
     }
     

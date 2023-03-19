@@ -22,7 +22,7 @@ public class LadderBuilder {
         
         for (int i = 0; i < numberOfPlayer; i++) {
             String playerName = playerList.get(i).getPlayerName();
-            listedPlayerNames += playerName + "    ";
+            listedPlayerNames += playerName + "     ";
         }
         
         return listedPlayerNames;
@@ -66,7 +66,7 @@ public class LadderBuilder {
         
         for (int i = 0; i < numberOfReward; i++) {
             String rewardName = rewardList.get(i).getReward();
-            listedRewardNames += rewardName + "    ";
+            listedRewardNames += rewardName + "     ";
         }
         
         return listedRewardNames;

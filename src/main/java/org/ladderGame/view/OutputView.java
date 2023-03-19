@@ -1,6 +1,9 @@
 package org.ladderGame.view;
 
 import org.ladderGame.domain.ladder.Ladder;
+import org.ladderGame.domain.player.Players;
+
+import java.util.stream.Stream;
 
 public class OutputView {
     
@@ -29,5 +32,32 @@ public class OutputView {
         for (String[] row : ladderBodyArray) {
             System.out.println(String.join("", row));
         }
+    }
+    
+    public void printResultGuide() {
+        System.out.println("\n결과를 보고싶은 사람은?");
+    }
+    
+    public boolean printResult(String player, Players players) {
+        boolean reenterPlayerName = false;
+        
+        if (player.equals("춘식이")) {
+            System.out.println("\n프로그램을 종료합니다.");
+            return reenterPlayerName;
+        }
+        
+        if (player.equals("all")) {
+            System.out.println("\n실행 결과");
+            return !reenterPlayerName;
+        }
+    
+        System.out.println("\n실행 결과");
+        System.out.println(players.getPlayersList().stream()
+            .filter(name -> name.getPlayerName().equals(player))
+            .findAny()
+            .get()
+            .getReward());
+        
+        return !reenterPlayerName;
     }
 }

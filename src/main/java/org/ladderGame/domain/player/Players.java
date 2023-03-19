@@ -20,7 +20,7 @@ public class Players {
         return new Players(players);
     }
     
-    public List<Player> getPlayersdList() {
+    public List<Player> getPlayersList() {
         return this.players;
     }
 }

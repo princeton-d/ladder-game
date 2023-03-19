@@ -14,4 +14,12 @@ public class Player {
     public String getPlayerName() {
         return name;
     }
+    
+    public void enterResult(Reward reward) {
+        this.reward = reward;
+    }
+    
+    public String getReward() {
+        return reward.getReward();
+    }
 }
