@@ -5,22 +5,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Players {
-    
+
     private final List<Player> players;
-    
+
     private Players(List<Player> players) {
         this.players = players;
     }
-    
+
     public static Players create(String[] playerArray) {
         List<Player> players = Arrays.stream(playerArray)
-            .map(Player::new)
-            .collect(Collectors.toUnmodifiableList());
-        
+                .map(Player::new)
+                .collect(Collectors.toUnmodifiableList());
+
         return new Players(players);
     }
-    
-    public List<Player> getPlayersList() {
-        return this.players;
+
+    public int size() {
+        return players.size();
     }
 }

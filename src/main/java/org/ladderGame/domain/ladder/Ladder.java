@@ -1,25 +1,31 @@
 package org.ladderGame.domain.ladder;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Ladder {
-    private final String playerList;
-    private final String rewardList;
-    private final String[][] ladderBody;
-    
-    public Ladder(String playerList, String rewardList, String[][] ladderBody) {
-        this.playerList = playerList;
-        this.ladderBody = ladderBody;
-        this.rewardList = rewardList;
+
+    private final List<Line> lines;
+
+    private Ladder(List<Line> lines) {
+        this.lines = Collections.unmodifiableList(lines);
     }
-    
-    public String getPlayerList() {
-        return playerList;
+
+    public static Ladder create(int width, int height) {
+        List<Line> lines = new ArrayList<>();
+        for (int row = 0; row < height; row++) {
+            lines.add(Line.draw(width));
+        }
+        return new Ladder(lines);
     }
-    
-    public String getRewardList() {
-        return rewardList;
-    }
-    
-    public String[][] getLadderBody() {
-        return ladderBody;
+
+    public int walk(int col) {
+        int row = 0;
+        while (row != lines.size()) {
+            col = lines.get(row).walk(col);
+            row++;
+        }
+        return col;
     }
 }
